@@ -3,6 +3,7 @@ import sys
 from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import QFile
+from PySide6.QtGui import QIcon
 
 
 class MainUi(QtWidgets.QWidget):
@@ -45,6 +46,7 @@ if __name__ == "__main__":
 	widget.resize(800, 600)
 	widget.show()
 	widget.setWindowTitle("DND Helper") # find me a good name
+	widget.setWindowIcon(QIcon('images\dndhelper logo.png'))
 	print(widget.text.text())
 
 	sys.exit(app.exec())
