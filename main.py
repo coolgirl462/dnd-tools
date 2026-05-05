@@ -4,6 +4,7 @@ from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import QFile
 
+
 class MainUi(QtWidgets.QWidget):
 	def __init__(self):
 		super().__init__()
@@ -43,7 +44,7 @@ if __name__ == "__main__":
 	widget = MainUi()
 	widget.resize(800, 600)
 	widget.show()
-
+	widget.setWindowTitle("DND Helper") # find me a good name
 	print(widget.text.text())
 
 	sys.exit(app.exec())
