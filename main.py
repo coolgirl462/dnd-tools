@@ -17,9 +17,9 @@ class MainUi(QtWidgets.QWidget):
 
 		self.layout = QtWidgets.QVBoxLayout(self)
 		self.layout.addWidget(self.text)
-		self.layout.addWidget(self.button)
 		self.layout.addWidget(self.Roll_Count)
 		self.layout.addWidget(self.Dice_Type)
+		self.layout.addWidget(self.button)
 
 		self.button.clicked.connect(self.magic)
 
