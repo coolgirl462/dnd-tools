@@ -1,25 +1,36 @@
 import random
 import sys
 from PySide6 import QtCore, QtWidgets, QtGui
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QLineEdit
 from PySide6.QtCore import QFile
 from PySide6.QtGui import QIcon
+from PySide6.QtGui import QRegularExpressionValidator
+from PySide6.QtCore import QRegularExpression
 
 
 class MainUi(QtWidgets.QWidget):
 	def __init__(self):
 		super().__init__()
 
-		self.button = QtWidgets.QPushButton("Click me!")
+		self.button = QtWidgets.QPushButton("Roll!")
 		self.Roll_Count = QtWidgets.QLineEdit()
 		self.Dice_Type = QtWidgets.QLineEdit()
 		self.text = QtWidgets.QLabel("Hello World")
 
 		self.layout = QtWidgets.QVBoxLayout(self)
 		self.layout.addWidget(self.text)
+		self.layout.addWidget(self.button)
 		self.layout.addWidget(self.Roll_Count)
 		self.layout.addWidget(self.Dice_Type)
-		self.layout.addWidget(self.button)
+
+		
+		NumbersOnly = QRegularExpression("^[0-9]*$")
+		validator = QRegularExpressionValidator(NumbersOnly)
+		self.Roll_Count.setValidator(validator)
+		self.Dice_Type.setValidator(validator)
+
+		self.Roll_Count.setPlaceholderText("How many die are you rolling?")
+		self.Dice_Type.setPlaceholderText("What kinda die are you rolling?")
 
 		self.button.clicked.connect(self.magic)
 
