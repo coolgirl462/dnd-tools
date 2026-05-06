@@ -24,8 +24,7 @@ class MainUi(QtWidgets.QWidget):
 		self.layout.addWidget(self.Dice_Type)
 
 		
-		NumbersOnly = QRegularExpression("^[0-9]*$")
-		validator = QRegularExpressionValidator(NumbersOnly)
+		validator = QRegularExpressionValidator(QRegularExpression("^[0-9]*$"))
 		self.Roll_Count.setValidator(validator)
 		self.Dice_Type.setValidator(validator)
 
