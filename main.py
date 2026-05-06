@@ -12,18 +12,18 @@ class MainUi(QtWidgets.QWidget):
 	def __init__(self):
 		super().__init__()
 
-		self.button = QtWidgets.QPushButton("Roll!")
+		self.Roll_Button = QtWidgets.QPushButton("Roll!")
 		self.Roll_Count = QtWidgets.QLineEdit()
 		self.Dice_Type = QtWidgets.QLineEdit()
-		self.text = QtWidgets.QLabel("Hello World")
-		self.Rolls_Display = QtWidgets.QLabel("Roll results")
+		self.Rolls_Result = QtWidgets.QLabel("")
+		self.Rolls_Display = QtWidgets.QLabel("")
 	
 		self.layout = QtWidgets.QVBoxLayout(self)
-		self.layout.addWidget(self.text)
-		self.layout.addWidget(self.button)
 		self.layout.addWidget(self.Roll_Count)
 		self.layout.addWidget(self.Dice_Type)
+		self.layout.addWidget(self.Roll_Button)
 		self.layout.addWidget(self.Rolls_Display)
+		self.layout.addWidget(self.Rolls_Result)
 
 		validator = QRegularExpressionValidator(QRegularExpression("^[0-9]*$"))
 		self.Roll_Count.setValidator(validator)
@@ -38,7 +38,7 @@ class MainUi(QtWidgets.QWidget):
 	def magic(self):
 		result,rolls = roll(int(self.Roll_Count.text()), int(self.Dice_Type.text()))
 		
-		self.text.setText(str(result))
+		self.Rolls_Result.setText(str(result))
 		self.Rolls_Display.setText(str(rolls))
 
 def roll(roll_count, dice_type):
@@ -47,9 +47,7 @@ def roll(roll_count, dice_type):
 	for i in range(1,roll_count+1):
 		roll_result = random.randint(1,dice_type)
 		rolls.append(roll_result)
-		print(roll_result)	
 		sum += roll_result	
-	print(rolls)
 	return sum,rolls
 
 
@@ -61,6 +59,5 @@ if __name__ == "__main__":
 	widget.show()
 	widget.setWindowTitle("DND Helper") # find me a good name
 	widget.setWindowIcon(QIcon('images\dndhelper logo.png'))
-	print(widget.text.text())
 
 	sys.exit(app.exec())
