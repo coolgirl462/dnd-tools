@@ -1,7 +1,7 @@
 import random
 import sys
 from PySide6 import QtCore, QtWidgets, QtGui
-from PySide6.QtWidgets import QApplication, QMainWindow, QLineEdit
+from PySide6.QtWidgets import QApplication, QMainWindow, QLineEdit, QLabel
 from PySide6.QtCore import QFile
 from PySide6.QtGui import QIcon
 from PySide6.QtGui import QRegularExpressionValidator
@@ -16,14 +16,14 @@ class MainUi(QtWidgets.QWidget):
 		self.Roll_Count = QtWidgets.QLineEdit()
 		self.Dice_Type = QtWidgets.QLineEdit()
 		self.text = QtWidgets.QLabel("Hello World")
-
+		self.Rolls_Display = QtWidgets.QLabel("")
+	
 		self.layout = QtWidgets.QVBoxLayout(self)
 		self.layout.addWidget(self.text)
 		self.layout.addWidget(self.button)
 		self.layout.addWidget(self.Roll_Count)
 		self.layout.addWidget(self.Dice_Type)
 
-		
 		NumbersOnly = QRegularExpression("^[0-9]*$")
 		validator = QRegularExpressionValidator(NumbersOnly)
 		self.Roll_Count.setValidator(validator)
@@ -36,19 +36,21 @@ class MainUi(QtWidgets.QWidget):
 
 	@QtCore.Slot()
 	def magic(self):
-		result = roll(int(self.Roll_Count.text()), int(self.Dice_Type.text()))
+		result,rolls = roll(int(self.Roll_Count.text()), int(self.Dice_Type.text()))
 		
 		self.text.setText(str(result))
-		
+		self.rolls.setText(str(rolls))
 
 def roll(roll_count, dice_type):
+	rolls = []
 	sum = 0 
 	for i in range(1,roll_count+1):
 		roll_result = random.randint(1,dice_type)
-		print(roll_result)
-		sum += roll_result
+		print(roll_result)	
+		sum += roll_result	
 
-	return sum
+	return sum,rolls
+
 
 if __name__ == "__main__":
 	app = QtWidgets.QApplication([])
