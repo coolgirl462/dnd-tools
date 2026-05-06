@@ -32,7 +32,7 @@ class MainUi(QtWidgets.QWidget):
 		self.Roll_Count.setPlaceholderText("How many die are you rolling?")
 		self.Dice_Type.setPlaceholderText("What kinda die are you rolling?")
 
-		self.button.clicked.connect(self.magic)
+		self.Roll_Button.clicked.connect(self.magic)
 
 	@QtCore.Slot()
 	def magic(self):
