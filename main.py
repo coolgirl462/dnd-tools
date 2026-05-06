@@ -16,15 +16,15 @@ class MainUi(QtWidgets.QWidget):
 		self.Roll_Count = QtWidgets.QLineEdit()
 		self.Dice_Type = QtWidgets.QLineEdit()
 		self.text = QtWidgets.QLabel("Hello World")
-		self.Rolls_Display = QtWidgets.QLabel("")
+		self.Rolls_Display = QtWidgets.QLabel("Roll results")
 	
 		self.layout = QtWidgets.QVBoxLayout(self)
 		self.layout.addWidget(self.text)
 		self.layout.addWidget(self.button)
 		self.layout.addWidget(self.Roll_Count)
 		self.layout.addWidget(self.Dice_Type)
+		self.layout.addWidget(self.Rolls_Display)
 
-		
 		validator = QRegularExpressionValidator(QRegularExpression("^[0-9]*$"))
 		self.Roll_Count.setValidator(validator)
 		self.Dice_Type.setValidator(validator)
@@ -39,16 +39,17 @@ class MainUi(QtWidgets.QWidget):
 		result,rolls = roll(int(self.Roll_Count.text()), int(self.Dice_Type.text()))
 		
 		self.text.setText(str(result))
-		self.rolls.setText(str(rolls))
+		self.Rolls_Display.setText(str(rolls))
 
 def roll(roll_count, dice_type):
 	rolls = []
 	sum = 0 
 	for i in range(1,roll_count+1):
 		roll_result = random.randint(1,dice_type)
+		rolls.append(roll_result)
 		print(roll_result)	
 		sum += roll_result	
-
+	print(rolls)
 	return sum,rolls
 
 
