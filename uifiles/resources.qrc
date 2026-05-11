@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>imageswithbackground/admin-removebg-preview.png</file>
+    <file>imageswithbackground/character.png</file>
+    <file>imageswithbackground/dashboard.png</file>
+    <file>imageswithbackground/delete_11503065.png</file>
+    <file>imageswithbackground/diceroll.png</file>
+    <file>imageswithbackground/exit button.png</file>
+    <file>imageswithbackground/key_1111774.png</file>
+    <file>imageswithbackground/search.png</file>
+    <file>imageswithbackground/web-development_18234108.png</file>
+    <file>imageswithbackground/widget.png</file>
+  </qresource>
+</RCC>

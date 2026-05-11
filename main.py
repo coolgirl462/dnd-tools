@@ -1,7 +1,7 @@
 import random
 import sys
 from PySide6 import QtCore, QtWidgets, QtGui
-from PySide6.QtWidgets import QApplication, QMainWindow, QLineEdit, QLabel
+from PySide6.QtWidgets import QApplication, QMainWindow, QLineEdit, QLabel, QPushButton
 from PySide6.QtCore import QFile
 from PySide6.QtGui import QIcon
 from PySide6.QtGui import QRegularExpressionValidator
@@ -57,7 +57,7 @@ if __name__ == "__main__":
 	widget = MainUi()
 	widget.resize(800, 600)
 	widget.show()
-	widget.setWindowTitle("DND Helper") # find me a good name
+	widget.setWindowTitle("DND Helper") 
 	widget.setWindowIcon(QIcon('images\dndhelper logo.png'))
-
+	widget.setStyleSheet('background-color:LightPink')
 	sys.exit(app.exec())
