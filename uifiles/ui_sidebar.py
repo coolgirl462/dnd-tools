@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(555, 324)
+        MainWindow.resize(397, 325)
         MainWindow.setStyleSheet(u"background-color: rgb(255, 201, 202);\n"
 "align:left")
         self.centralwidget = QWidget(MainWindow)
@@ -33,13 +33,13 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.icononlywidget = QWidget(self.centralwidget)
         self.icononlywidget.setObjectName(u"icononlywidget")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.icononlywidget.sizePolicy().hasHeightForWidth())
         self.icononlywidget.setSizePolicy(sizePolicy)
         self.icononlywidget.setMinimumSize(QSize(67, 313))
-        self.icononlywidget.setMaximumSize(QSize(67, 313))
+        self.icononlywidget.setMaximumSize(QSize(67, 1000))
         self.icononlywidget.setStyleSheet(u"QWidget{background-color: qlineargradient(spread:pad, x1:0.452514, y1:0.011, x2:0.52514, y2:1, stop:0 rgba(219, 25, 90, 255), stop:1 rgba(255, 176, 119, 255));\n"
 "\n"
 "}\n"
@@ -146,7 +146,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.iconnamewidget.sizePolicy().hasHeightForWidth())
         self.iconnamewidget.setSizePolicy(sizePolicy)
         self.iconnamewidget.setMinimumSize(QSize(117, 313))
-        self.iconnamewidget.setMaximumSize(QSize(169, 400))
+        self.iconnamewidget.setMaximumSize(QSize(169, 1000))
         self.iconnamewidget.setStyleSheet(u"QWidget{\n"
 "background-color: qlineargradient(spread:pad, x1:0.452514, y1:0.011, x2:0.52514, y2:1, stop:0 rgba(219, 25, 90, 255), stop:1 rgba(255, 176, 119, 255));\n"
 "	border-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(0, 0, 0, 255), stop:0.05 rgba(14, 8, 73, 255), stop:0.36 rgba(28, 17, 145, 255), stop:0.6 rgba(126, 14, 81, 255), stop:0.75 rgba(234, 11, 11, 255), stop:0.79 rgba(244, 70, 5, 255), stop:0.86 rgba(255, 136, 0, 255), stop:0.935 rgba(239, 236, 55, 255));\n"
@@ -167,6 +167,9 @@ class Ui_MainWindow(object):
 "}")
         self.gridLayout = QGridLayout(self.iconnamewidget)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(4, -1, 0, -1)
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.label_8 = QLabel(self.iconnamewidget)
@@ -192,19 +195,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.label)
 
 
-        self.gridLayout.addLayout(self.horizontalLayout_2, 0, 0, 1, 1)
+        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
 
-        self.verticalLayout_2 = QVBoxLayout()
-        self.verticalLayout_2.setSpacing(3)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 6, -1)
         self.WidgetPB2 = QPushButton(self.iconnamewidget)
         self.WidgetPB2.setObjectName(u"WidgetPB2")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.WidgetPB2.sizePolicy().hasHeightForWidth())
-        self.WidgetPB2.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.WidgetPB2.sizePolicy().hasHeightForWidth())
+        self.WidgetPB2.setSizePolicy(sizePolicy)
         self.WidgetPB2.setStyleSheet(u"")
         self.WidgetPB2.setIcon(icon)
         self.WidgetPB2.setIconSize(QSize(18, 18))
@@ -215,8 +211,8 @@ class Ui_MainWindow(object):
 
         self.DiceRollerPB2 = QPushButton(self.iconnamewidget)
         self.DiceRollerPB2.setObjectName(u"DiceRollerPB2")
-        sizePolicy1.setHeightForWidth(self.DiceRollerPB2.sizePolicy().hasHeightForWidth())
-        self.DiceRollerPB2.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.DiceRollerPB2.sizePolicy().hasHeightForWidth())
+        self.DiceRollerPB2.setSizePolicy(sizePolicy)
         self.DiceRollerPB2.setStyleSheet(u"")
         self.DiceRollerPB2.setIcon(icon1)
         self.DiceRollerPB2.setIconSize(QSize(18, 18))
@@ -228,22 +224,22 @@ class Ui_MainWindow(object):
 
         self.CharactersPB2 = QPushButton(self.iconnamewidget)
         self.CharactersPB2.setObjectName(u"CharactersPB2")
-        sizePolicy1.setHeightForWidth(self.CharactersPB2.sizePolicy().hasHeightForWidth())
-        self.CharactersPB2.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.CharactersPB2.sizePolicy().hasHeightForWidth())
+        self.CharactersPB2.setSizePolicy(sizePolicy)
         self.CharactersPB2.setMinimumSize(QSize(0, 0))
         self.CharactersPB2.setStyleSheet(u"")
         self.CharactersPB2.setIcon(icon2)
         self.CharactersPB2.setIconSize(QSize(18, 18))
         self.CharactersPB2.setCheckable(True)
-        self.CharactersPB2.setChecked(True)
+        self.CharactersPB2.setChecked(False)
         self.CharactersPB2.setAutoExclusive(True)
 
         self.verticalLayout_2.addWidget(self.CharactersPB2)
 
         self.ProfilePB2 = QPushButton(self.iconnamewidget)
         self.ProfilePB2.setObjectName(u"ProfilePB2")
-        sizePolicy1.setHeightForWidth(self.ProfilePB2.sizePolicy().hasHeightForWidth())
-        self.ProfilePB2.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.ProfilePB2.sizePolicy().hasHeightForWidth())
+        self.ProfilePB2.setSizePolicy(sizePolicy)
         self.ProfilePB2.setMinimumSize(QSize(23, 20))
         self.ProfilePB2.setStyleSheet(u"")
         self.ProfilePB2.setIcon(icon3)
@@ -270,7 +266,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addWidget(self.ExitPB2)
 
 
-        self.gridLayout.addLayout(self.verticalLayout_2, 1, 0, 1, 1)
+        self.gridLayout.addLayout(self.verticalLayout_2, 0, 0, 1, 1)
 
 
         self.gridLayout_4.addWidget(self.iconnamewidget, 0, 1, 1, 1)
@@ -293,6 +289,7 @@ class Ui_MainWindow(object):
         icon5 = QIcon()
         icon5.addFile(u":/newPrefix/imageswithbackground/search.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.pushButton.setIcon(icon5)
+        self.pushButton.setCheckable(True)
 
         self.horizontalLayout.addWidget(self.pushButton)
 
